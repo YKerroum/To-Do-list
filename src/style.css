@@ -1,6 +1,12 @@
-.hello {
-  color: green;
-}
 body {
-    background-color: bisque;
+background-color: rgb(238, 238, 238);
+position: relative;
+}
+#todolist {
+padding: 0;
+list-style-type: none;
+width:70%;
+position: absolute;
+left: 50%;
+top: 50%;
 }
