@@ -12,16 +12,16 @@ module.exports = {
   },
 
   plugins: [
-  new HtmlWebpackPlugin({
-   template: './src/index.html',
-  }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
   ],
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
-   module: {
+  module: {
 
     rules: [
 
