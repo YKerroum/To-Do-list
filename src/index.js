@@ -10,6 +10,7 @@ class task {
 
 const fillTasksList= (liste) => {
 liste=liste.sort((a,b) =>  a.index - b.index );
+document.getElementById("todolist").innerHTML="";
   liste.forEach((element) => {
     document.getElementById("todolist").innerHTML+=`
     <li class="task" id="${element.index}">
@@ -22,9 +23,6 @@ liste=liste.sort((a,b) =>  a.index - b.index );
     `;
 
   });
-  document.getElementById("todolist").innerHTML+=`
-  <button type="button">Clear all completed</button>
-  `;
 };
 window.addEventListener('load', () => {
 const tasks=[{ 'description': 'wash the dishes', 'completed':false, 'index': 0},

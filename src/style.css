@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap');
+
 body {
 background-color: rgb(238, 238, 238);
 position: relative;
 height:100vh;
+font-family: 'Open Sans', sans-serif;
 }
-#todolist {
-padding: 0;
-list-style-type: none;
+
+main {
 width:60%;
 position: absolute;
 left: 20%;
@@ -13,7 +15,40 @@ top: 10%;
 background-color:rgba(255, 255, 255, 0.814);
 box-shadow: 4px 4px 6px rgba(112, 112, 112, 0.423), -4px 4px 6px rgba(112, 112, 112, 0.423);
 }
-.task, h2{
+.listElement {
+padding: 0;
+margin: 0;
+width: 100%;
+height: 50px;
+border-bottom: 1px solid rgba(181, 180, 180, 0.811);
+}
+#todolist {
+list-style-type: none;
+height: auto;
+}
+h1 {
+margin:0;
+padding: 0px 10px;
+}
+form {
+padding: 0 10px;
+height:50px;
+}
+form input {
+width: 95%;
+height: 100%;
+border-style: none;
+background-color:rgba(255, 255, 255, 0.814);
+padding: 0;
+margin-left: 5px;
+font-size: 15px;
+font-style:italic;
+}
+form input:focus {
+outline: none;
+}
+
+.task {
 margin:0;
 display:flex;
 justify-content: space-between;
@@ -28,16 +63,17 @@ text-decoration:line-through;
 }
 
 
-#todolist button {
+button {
 width: 100%;
 height: 50px;
 background-color: rgb(238, 238, 238);
 border-style: none;
-color: rgb(102, 101, 101)
-
+color: rgb(102, 101, 101);
+font-weight: 300;
+font-size: 16px;
 }
 
-#todolist button:hover {
+button:hover {
 text-decoration: underline;
   cursor: pointer;
   color:black;
