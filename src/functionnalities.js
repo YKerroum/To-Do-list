@@ -16,20 +16,34 @@ export default class tasksList {
 
   addTask(task) {
     const newTask = {
-      id: this.count,
-      title: book.title,
-      author: book.author,
+      index: this.count,
+      description: task.description,
+      completed: task.completed || false
     };
 
-    const books = this.getBooks();
-    books.push(newBook);
-    localStorage.setItem('books', JSON.stringify(books));
+    const localTasks = this.getTasks();
+    localTasks.push(newTask);
+    localStorage.setItem('tasks', JSON.stringify(localTasks));
     this.count += 1;
   }
 
-  removeBook(id) {
-    const books = this.getBooks();
-    const filteredBooks = books.filter((book) => book.id !== id);
-    localStorage.setItem('books', JSON.stringify(filteredBooks));
+  editTask(id,description){
+  const editedTasks = this.getTasks().map(task => {
+  if (task.index === id) {
+    return {...task, description: description};
+  }
+
+  return task;
+});
+  localStorage.setItem('tasks', JSON.stringify(editedTasks));
+  }
+
+  removeTask(id) {
+    const localTasks = this.getTasks();
+    const filteredTasks = localTasks.filter((task) => task.index !== id);
+    filteredTasks.forEach((task,index) => {
+    task.index = index+1;
+    })
+    localStorage.setItem('tasks', JSON.stringify(filteredTasks));
   }
 }

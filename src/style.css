@@ -68,6 +68,12 @@ form input:focus {
   text-decoration: line-through;
 }
 
+.description {
+outline: none;
+border: none;
+width: 100%;
+}
+
 button {
   width: 100%;
   height: 50px;
@@ -82,4 +88,9 @@ button:hover {
   text-decoration: underline;
   cursor: pointer;
   color: black;
+}
+
+.hamburger {
+cursor: move;
+
 }

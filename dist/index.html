@@ -7,7 +7,20 @@
     
 <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
 <body>
-    <h1>Hello webpack!</h1>
+<main>
+    <div class="listElement">
+        <h1>Today's To Do</h1>
+    </div>
+    <div class="listElement">
+        <form action="#" id="addForm">
+            <input type="text" id="addTask" placeholder="Add to your list...">
+        </form>
+    </div>
+    
+    <ul id="todolist" class="listElement">
+    </ul>
+    <button type="button" class="listElement">Clear all completed</button>
     <script src="main.js"></script>
+</main>
 </body>
 </html>
