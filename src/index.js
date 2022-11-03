@@ -1,4 +1,6 @@
 import './style.css';
+import task from './taskClass.js';
+import tasksList from './functionnalities.js';
 
 const fillTasksList = (liste) => {
   liste = liste.sort((a, b) => a.index - b.index);
@@ -16,7 +18,6 @@ const fillTasksList = (liste) => {
   });
 };
 window.addEventListener('load', () => {
-  const tasks = [{ description: 'wash the dishes', completed: false, index: 0 },
-    { description: 'complete To do list', completed: true, index: 1 }];
+  const tasks = localstorage.tasksList;
   fillTasksList(tasks);
 });
