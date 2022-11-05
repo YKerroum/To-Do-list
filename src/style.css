@@ -93,6 +93,7 @@ h1 {
 
 .labelChecked {
   text-decoration: line-through;
+  color: grey;
 }
 
 .checkbox {
