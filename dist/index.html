@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webpack Exercise</title>
-    <script src="https://kit.fontawesome.com/73455f8e9d.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
 <body>
 <main>
     <div class="header">
         <h1>Today's To Do</h1>
-        <div><i class="fa-regular fa-arrow-rotate-right"></i></div>
+        <div class="icons"><i class="fa-solid fa-arrows-rotate"></i></div>
     </div>
     <div class="listElement">
-        <form action="#" id="addForm">
+        <div id="addForm">
             <input type="text" id="addTask" placeholder="Add to your list...">
-        </form>
-
+            <span>&ldca;</span>
+        </div>
+        <div class="icons"></div>
     </div>
     
     <ul id="todolist" class="listElement">
     </ul>
-    <button type="button" class="listElement">Clear all completed</button>
+    <button id="clear" type="button" class="listElement">Clear all completed</button>
     <script src="main.js"></script>
 </main>
 </body>
