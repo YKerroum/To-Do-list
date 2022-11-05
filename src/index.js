@@ -1,5 +1,6 @@
 import './style.css';
 import TasksList from './functionnalities.js';
+import { clearCompleted, changeCompleted } from './completed.js';
 
 const liste = new TasksList();
 
@@ -34,6 +35,14 @@ const fillTasksList = () => {
     });
   });
 
+  document.querySelectorAll('.checkbox').forEach(((element) => {
+    element.addEventListener('change', (e) => {
+      const id = parseInt(e.target.getAttribute('id'), 10);
+      changeCompleted(id);
+      fillTasksList();
+    });
+  }));
+
   document.querySelectorAll('.editForm').forEach((element) => {
     element.addEventListener('submit', () => {
       const el = element.firstElementChild;
@@ -54,4 +63,8 @@ window.addEventListener('load', () => {
     }
   });
   fillTasksList();
+  document.getElementById('clear').addEventListener('click', () => {
+    clearCompleted();
+    fillTasksList();
+  });
 });
