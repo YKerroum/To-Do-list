@@ -1,4 +1,4 @@
-export default class tasksList {
+export default class TasksList {
   // Counter to keep track of tasks index
   constructor() {
     this.count = this.getTasks().length + 1;
@@ -18,7 +18,7 @@ export default class tasksList {
     const newTask = {
       index: this.count,
       description: task.description,
-      completed: task.completed || false
+      completed: task.completed || false,
     };
 
     const localTasks = this.getTasks();
@@ -27,23 +27,24 @@ export default class tasksList {
     this.count += 1;
   }
 
-  editTask(id,description){
-  const editedTasks = this.getTasks().map(task => {
-  if (task.index === id) {
-    return {...task, description: description};
-  }
+  editTask(id, description) {
+    const editedTasks = this.getTasks().map((task) => {
+      if (task.index === id) {
+        return { ...task, description };
+      }
 
-  return task;
-});
-  localStorage.setItem('tasks', JSON.stringify(editedTasks));
+      return task;
+    });
+    localStorage.setItem('tasks', JSON.stringify(editedTasks));
   }
 
   removeTask(id) {
+    const i = parseInt(id, 10);
     const localTasks = this.getTasks();
-    const filteredTasks = localTasks.filter((task) => task.index !== id);
-    filteredTasks.forEach((task,index) => {
-    task.index = index+1;
-    })
+    const filteredTasks = localTasks.filter((task) => task.index !== i);
+    filteredTasks.forEach((task, index) => {
+      task.index = index + 1;
+    });
     localStorage.setItem('tasks', JSON.stringify(filteredTasks));
   }
 }
