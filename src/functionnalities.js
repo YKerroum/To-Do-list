@@ -15,13 +15,14 @@ export default class TasksList {
   }
 
   addTask(task) {
+    const localTasks = this.getTasks();
     const newTask = {
-      index: this.count,
+      index: localTasks.length+1,
       description: task.description,
       completed: task.completed || false,
     };
 
-    const localTasks = this.getTasks();
+    
     localTasks.push(newTask);
     localStorage.setItem('tasks', JSON.stringify(localTasks));
     this.count += 1;
