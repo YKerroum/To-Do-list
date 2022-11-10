@@ -17,12 +17,11 @@ export default class TasksList {
   addTask(task) {
     const localTasks = this.getTasks();
     const newTask = {
-      index: localTasks.length+1,
+      index: localTasks.length + 1,
       description: task.description,
       completed: task.completed || false,
     };
 
-    
     localTasks.push(newTask);
     localStorage.setItem('tasks', JSON.stringify(localTasks));
     this.count += 1;

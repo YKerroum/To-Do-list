@@ -5,6 +5,7 @@ import { clearCompleted, changeCompleted } from './completed.js';
 const liste = new TasksList();
 
 const fillTasksList = () => {
+  const liste = new TasksList();
   const Tasks = liste.getTasks();
   document.getElementById('todolist').innerHTML = '';
   Tasks.forEach((element) => {
